@@ -38,7 +38,7 @@ def daily_loop(uid_pairs, line_queue):
     date_today = datetime.date.today()
     email_sent = False
     while datetime.date.today() == date_today:
-        if time.localtime().tm_hour < 1:
+        if time.localtime().tm_hour < 15:
             if not line_queue.empty():
                 scan = line_queue.get()
                 if scan == "send_mail": #DEBUGGING
@@ -61,6 +61,7 @@ def monitor_input(line_queue):
 def start_stdin_monitoring(line_queue):
     input_thread = Thread(target=monitor_input, args=(line_queue,), name="input_thread")
     input_thread.start()
+
 
 def setup_attendance(population):
     """
