@@ -1,4 +1,4 @@
-# NFC-signin
+# advo-signin
 Advo assembly sign-in using unique ids retrieved from stdin (from a rfid reader). Code for a raspberry pi daemon.
 
 In order to reuse this code, you need to create two files:
